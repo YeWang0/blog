@@ -102,7 +102,8 @@ blockquote {
 }
 blockquote:before {
   color: #2a4a54;
-  content: "\201C" /*Unicode for Left Double Quote*/;
+  content: "\201C";
+/*Unicode for Left Double Quote*/
   font-size: 4em;
   line-height: 0.1em;
   margin-right: 0.25em;
