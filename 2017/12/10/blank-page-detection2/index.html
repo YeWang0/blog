@@ -7,19 +7,19 @@
   
   <title>Detect blank snapshot | Dare to Change Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Backgroud:The current snapshot server will always return rendered result without checking whether the snapshot has content or not, which hurt the user experience a lot. As a result, detecting blank sn">
+  <meta name="description" content="Backgroud:A new model for blank page detection.">
 <meta name="keywords" content="Work">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Detect blank snapshot">
-<meta property="og:url" content="https://blog.yewang.host/2017/12/10/work-blank-page/index.html">
+<meta property="og:url" content="https://blog.yewang.host/2017/12/10/blank-page-detection2/index.html">
 <meta property="og:site_name" content="Dare to Change Life">
-<meta property="og:description" content="Backgroud:The current snapshot server will always return rendered result without checking whether the snapshot has content or not, which hurt the user experience a lot. As a result, detecting blank sn">
-<meta property="og:image" content="https://blog.yewang.host/2017/12/10/work-blank-page/images/IMG_2844.JPG">
-<meta property="og:updated_time" content="2017-12-23T07:06:05.821Z">
+<meta property="og:description" content="Backgroud:A new model for blank page detection.">
+<meta property="og:image" content="https://blog.yewang.host/2017/12/10/blank-page-detection2/images/camila.jpeg">
+<meta property="og:updated_time" content="2018-01-19T07:06:27.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Detect blank snapshot">
-<meta name="twitter:description" content="Backgroud:The current snapshot server will always return rendered result without checking whether the snapshot has content or not, which hurt the user experience a lot. As a result, detecting blank sn">
-<meta name="twitter:image" content="https://blog.yewang.host/2017/12/10/work-blank-page/images/IMG_2844.JPG">
+<meta name="twitter:description" content="Backgroud:A new model for blank page detection.">
+<meta name="twitter:image" content="https://blog.yewang.host/2017/12/10/blank-page-detection2/images/camila.jpeg">
   
     <link rel="alternate" href="/atom.xml" title="Dare to Change Life" type="application/atom+xml">
   
@@ -66,9 +66,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-work-blank-page" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-blank-page-detection2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/10/work-blank-page/" class="article-date">
+    <a href="/2017/12/10/blank-page-detection2/" class="article-date">
   <time datetime="2017-12-11T00:05:38.000Z" itemprop="datePublished">2017-12-10</time>
 </a>
     
@@ -88,18 +88,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Backgroud"><a href="#Backgroud" class="headerlink" title="Backgroud:"></a>Backgroud:</h3><p>The current snapshot server will always return rendered result without checking whether the snapshot has content or not, which hurt the user experience a lot. As a result, detecting blank snapshot is necessary to do.<br><img src="images/IMG_2844.JPG" width="850"><br><a id="more"></a></p>
-<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h4><ol>
-<li><p>Count word frequency and use the keywords frequency as a signal to detect. Easy to do, but low precision since threshhold is hard to decision and may varies app by app. Also, some apps just do not return search results by keywords matching.</p>
-</li>
-<li><p>Page differece between demo blank page and the current page. Higher precision, but need to get demo blank page</p>
-</li>
-</ol>
+        <h3 id="Backgroud"><a href="#Backgroud" class="headerlink" title="Backgroud:"></a>Backgroud:</h3><p>A new model for blank page detection.<br><img src="images/camila.jpeg" width="850"><br><a id="more"></a></p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h4><p>Based on the html, IR based detection is built. However, the recall is around 60% in order to maintain a high precision(&gt;90%)</p>
+<p>During the process of building IR detection model, we find that the ‘no result’ remind provided by different websites could be a strong signal. As a result, we create a config file to record the ‘no result’ string on different sites and do detection by matching the string. With this rules based model, the precision is improved to 95% and recall is 85%.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.yewang.host/2017/12/10/work-blank-page/" data-id="cjcll2lij0004t58x2s6ctz4t" class="article-share-link">Teilen</a>
+      <a data-url="https://blog.yewang.host/2017/12/10/blank-page-detection2/" data-id="cjcll2lhn0000t58xywjejicm" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -110,19 +106,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/12/10/blank-page-detection2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/11/zhu-guang-zhe/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          Detect blank snapshot
+          Chasing the Light
         
       </div>
     </a>
   
   
-    <a href="/2017/12/10/work-snapshot/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/12/10/work-blank-page/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Generate Snapshot for URL in real time</div>
+      <div class="article-nav-title">Detect blank snapshot</div>
     </a>
   
 </nav>
