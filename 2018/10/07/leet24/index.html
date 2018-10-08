@@ -5,19 +5,19 @@
   
 
   
-  <title>11. Container With Most Water | Dare to differ</title>
+  <title>lee24. Swap Nodes in Pairst24 | Dare to differ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Descriptionhttps://leetcode.com/problems/container-with-most-water/description/ CategoryArray, Two pointers ExplainStart with widest range, in order to contain more water (larger area), the next bound">
+  <meta name="description" content="Descriptionhttps://leetcode.com/problems/swap-nodes-in-pairs/description/ CategoryLinked list, Dummy node ExplainHow to swap nodes in linked list?Set dummy node, insert nodes in linked list to the hea">
 <meta name="keywords" content="Coding Practice">
 <meta property="og:type" content="article">
-<meta property="og:title" content="11. Container With Most Water">
-<meta property="og:url" content="https://yewang.host/2018/10/07/leet11/index.html">
+<meta property="og:title" content="lee24. Swap Nodes in Pairst24">
+<meta property="og:url" content="https://yewang.host/2018/10/07/leet24/index.html">
 <meta property="og:site_name" content="Dare to differ">
-<meta property="og:description" content="Descriptionhttps://leetcode.com/problems/container-with-most-water/description/ CategoryArray, Two pointers ExplainStart with widest range, in order to contain more water (larger area), the next bound">
-<meta property="og:updated_time" content="2018-10-08T06:41:55.561Z">
+<meta property="og:description" content="Descriptionhttps://leetcode.com/problems/swap-nodes-in-pairs/description/ CategoryLinked list, Dummy node ExplainHow to swap nodes in linked list?Set dummy node, insert nodes in linked list to the hea">
+<meta property="og:updated_time" content="2018-10-08T06:53:35.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="11. Container With Most Water">
-<meta name="twitter:description" content="Descriptionhttps://leetcode.com/problems/container-with-most-water/description/ CategoryArray, Two pointers ExplainStart with widest range, in order to contain more water (larger area), the next bound">
+<meta name="twitter:title" content="lee24. Swap Nodes in Pairst24">
+<meta name="twitter:description" content="Descriptionhttps://leetcode.com/problems/swap-nodes-in-pairs/description/ CategoryLinked list, Dummy node ExplainHow to swap nodes in linked list?Set dummy node, insert nodes in linked list to the hea">
   
     <link rel="alternate" href="/atom.xml" title="Dare to differ" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-leet11" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-leet24" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/07/leet11/" class="article-date">
-  <time datetime="2018-10-08T06:30:46.000Z" itemprop="datePublished">2018-10-07</time>
+    <a href="/2018/10/07/leet24/" class="article-date">
+  <time datetime="2018-10-08T06:49:11.000Z" itemprop="datePublished">2018-10-07</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      11. Container With Most Water
+      lee24. Swap Nodes in Pairst24
     </h1>
   
 
@@ -86,16 +86,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><a href="https://leetcode.com/problems/container-with-most-water/description/" target="_blank" rel="noopener">https://leetcode.com/problems/container-with-most-water/description/</a></p>
-<h3 id="Category"><a href="#Category" class="headerlink" title="Category"></a>Category</h3><p>Array, Two pointers</p>
-<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><p>Start with widest range, in order to contain more water (larger area), the next bound should be higher. In order to achieve this, the lower bound must be updated since it actually decide the current height of container. Also, since it is from sides to middle, current max is the max for this lower bound, and this bound is no longer userful.</p>
-<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxArea</span><span class="params">(self, height)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type height: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = len(height) - <span class="number">1</span></span><br><span class="line">        cur_max = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            h = min(height[l], height[r])</span><br><span class="line">            cur_max = max(cur_max, (r - l) * h)</span><br><span class="line">            <span class="keyword">if</span> height[l] == h:</span><br><span class="line">                l = l + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r = r - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> cur_max</span><br></pre></td></tr></table></figure>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/description/" target="_blank" rel="noopener">https://leetcode.com/problems/swap-nodes-in-pairs/description/</a></p>
+<h3 id="Category"><a href="#Category" class="headerlink" title="Category"></a>Category</h3><p>Linked list, Dummy node</p>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><p>How to swap nodes in linked list?<br>Set dummy node, insert nodes in linked list to the head of list(next node of dummy).</p>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">swapPairs</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        dummy = ListNode(<span class="number">0</span>)</span><br><span class="line">        cur = dummy</span><br><span class="line">        <span class="keyword">while</span> head <span class="keyword">and</span> head.next:</span><br><span class="line">            tmp = head.next.next</span><br><span class="line">            cur.next = head.next</span><br><span class="line">            head.next.next = head</span><br><span class="line">            head.next = <span class="keyword">None</span></span><br><span class="line">            cur = head</span><br><span class="line">            head = tmp</span><br><span class="line">        <span class="keyword">if</span> head:</span><br><span class="line">            cur.next = head</span><br><span class="line">        <span class="keyword">return</span> dummy.next</span><br></pre></td></tr></table></figure>
+<h3 id="Best-solution"><a href="#Best-solution" class="headerlink" title="Best solution"></a>Best solution</h3><p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share" target="_blank" rel="noopener">https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share</a></p>
 <h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>O(N)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/10/07/leet11/" data-id="cjmzxxc8j0005tn8xomgiax55" class="article-share-link">Share</a>
+      <a data-url="https://yewang.host/2018/10/07/leet24/" data-id="cjmzxxc8p0008tn8xi71g505g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -106,19 +107,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/10/07/leet24/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          lee24. Swap Nodes in Pairst24
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/07/22-generate-parentheses/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/10/07/leet11/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">22. Generate Parentheses</div>
+      <div class="article-nav-title">11. Container With Most Water</div>
     </a>
   
 </nav>

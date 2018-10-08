@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yewang.host"></form>
@@ -60,6 +60,50 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-leet24" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/07/leet24/" class="article-date">
+  <time datetime="2018-10-08T06:49:11.000Z" itemprop="datePublished">2018-10-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/07/leet24/">lee24. Swap Nodes in Pairst24</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/description/" target="_blank" rel="noopener">https://leetcode.com/problems/swap-nodes-in-pairs/description/</a></p>
+<h3 id="Category"><a href="#Category" class="headerlink" title="Category"></a>Category</h3><p>Linked list, Dummy node</p>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><p>How to swap nodes in linked list?<br>Set dummy node, insert nodes in linked list to the head of list(next node of dummy).</p>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">swapPairs</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        dummy = ListNode(<span class="number">0</span>)</span><br><span class="line">        cur = dummy</span><br><span class="line">        <span class="keyword">while</span> head <span class="keyword">and</span> head.next:</span><br><span class="line">            tmp = head.next.next</span><br><span class="line">            cur.next = head.next</span><br><span class="line">            head.next.next = head</span><br><span class="line">            head.next = <span class="keyword">None</span></span><br><span class="line">            cur = head</span><br><span class="line">            head = tmp</span><br><span class="line">        <span class="keyword">if</span> head:</span><br><span class="line">            cur.next = head</span><br><span class="line">        <span class="keyword">return</span> dummy.next</span><br></pre></td></tr></table></figure>
+<h3 id="Best-solution"><a href="#Best-solution" class="headerlink" title="Best solution"></a>Best solution</h3><p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share" target="_blank" rel="noopener">https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share</a></p>
+<h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>O(N)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yewang.host/2018/10/07/leet24/" data-id="cjmzxxc8p0008tn8xi71g505g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-leet11" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -92,9 +136,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/10/07/leet11/" data-id="cjmzxgydn0004ro8xpt1rf13e" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/10/07/leet11/" data-id="cjmzxxc8j0005tn8xomgiax55" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
+
     </footer>
   </div>
   
@@ -144,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/10/07/22-generate-parentheses/" data-id="cjmzxgydx0008ro8xe6480cz5" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/10/07/22-generate-parentheses/" data-id="cjmzxxc8a0004tn8xo211omng" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -190,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/09/02/react-bind-this/" data-id="cjmzxgye8000dro8xcdc0ecie" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/09/02/react-bind-this/" data-id="cjmzxxc95000gtn8x1kf0zjt9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -234,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/08/28/nginx-proxy-pass/" data-id="cjmzxgydg0003ro8x3q3ijbjh" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/08/28/nginx-proxy-pass/" data-id="cjmzxxc8s0009tn8xcgbkcxf2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -278,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/08/27/python-import/" data-id="cjmzxgye4000bro8x2ope2hof" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/08/27/python-import/" data-id="cjmzxxc98000itn8xwi8xwzkx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -319,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/08/13/perfect/" data-id="cjmzxgydu0005ro8xf5e6k1zd" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/08/13/perfect/" data-id="cjmzxxc8v000ctn8xvb7lm326" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Music/">Music</a></li></ul>
@@ -366,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/08/09/touch-my-soul/" data-id="cjmzxgyec000gro8xm12vq160" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/08/09/touch-my-soul/" data-id="cjmzxxc9e000ltn8xkhb49psj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Poem/">Poem</a></li></ul>
@@ -444,7 +490,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/05/14/work-summary-5-14/" data-id="cjmzxgyej000lro8xir3nofym" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/05/14/work-summary-5-14/" data-id="cjmzxxc9m000qtn8xl733a26a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -487,53 +533,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/01/18/blank-page-detection2/" data-id="cjmzxgyet000sro8xpmf9qzdk" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/01/18/blank-page-detection2/" data-id="cjmzxxc7l0000tn8xl6ijbqwy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-piao-xiang-bei-fang" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/12/piao-xiang-bei-fang/" class="article-date">
-  <time datetime="2017-12-13T07:24:38.000Z" itemprop="datePublished">2017-12-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/12/piao-xiang-bei-fang/">Stranger In The North</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="文慧如-漂向北方"><a href="#文慧如-漂向北方" class="headerlink" title="文慧如 - 漂向北方"></a>文慧如 - 漂向北方</h3><iframe width="560" height="315" src="https://www.youtube.com/embed/7NN4RlKspW0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-        
-          <p class="article-more-link">
-            <a href="/2017/12/12/piao-xiang-bei-fang/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yewang.host/2017/12/12/piao-xiang-bei-fang/" data-id="cjmzxgye00009ro8xa8rvqmfg" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Music/">Music</a></li></ul>
 
     </footer>
   </div>
@@ -546,7 +549,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -570,14 +573,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Coding-Practice/" style="font-size: 10px;">Coding Practice</a> <a href="/tags/Music/" style="font-size: 15px;">Music</a> <a href="/tags/Poem/" style="font-size: 10px;">Poem</a> <a href="/tags/Think/" style="font-size: 10px;">Think</a> <a href="/tags/Work/" style="font-size: 20px;">Work</a>
+      <a href="/tags/Coding-Practice/" style="font-size: 15px;">Coding Practice</a> <a href="/tags/Music/" style="font-size: 15px;">Music</a> <a href="/tags/Poem/" style="font-size: 10px;">Poem</a> <a href="/tags/Think/" style="font-size: 10px;">Think</a> <a href="/tags/Work/" style="font-size: 20px;">Work</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -587,9 +590,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/10/07/leet24/">lee24. Swap Nodes in Pairst24</a>
+          </li>
         
           <li>
             <a href="/2018/10/07/leet11/">11. Container With Most Water</a>
@@ -605,10 +612,6 @@
         
           <li>
             <a href="/2018/08/28/nginx-proxy-pass/">Nginx proxy_pass</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/27/python-import/">Python Import</a>
           </li>
         
       </ul>
