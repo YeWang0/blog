@@ -61,6 +61,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-work-summary-5-14" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/14/work-summary-5-14/" class="article-date">
+  <time datetime="2018-05-14T15:30:45.000Z" itemprop="datePublished">2018-05-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/14/work-summary-5-14/">Qury工作总结-(半年)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Qury-work-summary"><a href="#Qury-work-summary" class="headerlink" title="Qury work summary"></a>Qury work summary</h2><ol>
+<li>Optimized existed PhantomJS based online rendering system<ul>
+<li>Previous performace: %50 <60s %50="">60s =》 %70 10s, %90 20s, 10% 60s</60s></li>
+<li>Communication mechanism</li>
+<li>Task Queue: enable cancelling tasks </li>
+<li>Rendering logic: split the previous logic to multiple steps and add corner case handling for each steps to improve the result quality(i.e. Blank white page, timeout)</li>
+<li>Embedded no-result page detection and quality improvement feature.</li>
+</ul>
+</li>
+<li>Maintained and rewrite the result rendering code (Android)<ul>
+<li>Figure out the UI drawing logic: Y = padding * (2^(i - scroll/height) - 1)</li>
+<li>Cutomized adapter to control the UI</li>
+<li>Cutomized webview to make the rendering logic at client side complete</li>
+</ul>
+</li>
+<li>Desigined and developed a new real-time rendering system based on Selenium <ul>
+<li>Improve the performance of rendering (70% 5s, 95% 10s, 5% 60s)</li>
+<li>Desigined rule based quality improvement method to improve the snapshot quality (no popup, no header, no ads, show content only)</li>
+<li>Desigined IR, ML and Rule based model to detect no-result page (90% precision and 99% recall)</li>
+</ul>
+</li>
+<li><p>Data crawling task of Instagram</p>
+<ul>
+<li>get trending hashtags and posts recursively </li>
+<li>crawl trending posts and get all hashtags of these trending posts</li>
+<li>recursively using these newly crawled hashtags to get more related ones.</li>
+</ul>
+</li>
+<li><p>Automation system to add new websites and apps for search and browsing.</p>
+</li>
+<li><p>A web-based online file and configuration distribution system (config-hub). </p>
+<ul>
+<li>Config ssh connection of servers within a cluster and use one of them to host website, enable various of operations within the cluster based on SSH.</li>
+<li>Executing ssh commands or files.</li>
+<li>Upload files to specific server or a cluster on GCP.</li>
+<li>System level or Project level configuration (edit and apply)</li>
+<li>Enable start and stop of machines</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yewang.host/2018/05/14/work-summary-5-14/" data-id="cjn1d1hnt000uti8xalrzqg6l" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-blank-page-detection2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/18/blank-page-detection2/" class="article-date">
@@ -92,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/01/18/blank-page-detection2/" data-id="cjn0in8mf0000m58xgysdsadc" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/01/18/blank-page-detection2/" data-id="cjn1d1hle0000ti8xdpbduqn7" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -135,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2017/12/12/piao-xiang-bei-fang/" data-id="cjn0in8nx000gm58xefb2qv0n" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2017/12/12/piao-xiang-bei-fang/" data-id="cjn1d1hn8000hti8xnshpmfyb" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Music/">Music</a></li></ul>
@@ -178,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2017/12/12/daily-update-db/" data-id="cjn0in8mq0001m58x4tqlkqo3" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2017/12/12/daily-update-db/" data-id="cjn1d1hlo0001ti8x0txz1rnt" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -221,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2017/12/11/zhu-guang-zhe/" data-id="cjn0in8ol000um58xqob65dbd" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2017/12/11/zhu-guang-zhe/" data-id="cjn1d1hnx000wti8x597auwf1" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Music/">Music</a></li></ul>
@@ -264,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2017/12/10/work-blank-page/" data-id="cjn0in8od000pm58xkzq3u0ve" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2017/12/10/work-blank-page/" data-id="cjn1d1hnp000rti8xwjre7qer" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -307,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2017/12/10/work-snapshot/" data-id="cjn0in8oo000wm58xbezydk2e" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2017/12/10/work-snapshot/" data-id="cjn1d1ho2000zti8xzu8f4cl2" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -350,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2017/12/10/first-post/" data-id="cjn0in8n30003m58x25ayiwly" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2017/12/10/first-post/" data-id="cjn1d1hm40003ti8xy7s6w28a" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Think/">Think</a></li></ul>
@@ -412,6 +490,10 @@
       <ul>
         
           <li>
+            <a href="/2018/10/08/leet33/">33. Search in Rotated Sorted Array</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/08/leet31/">31. Next Permutation</a>
           </li>
         
@@ -425,10 +507,6 @@
         
           <li>
             <a href="/2018/10/07/22-generate-parentheses/">22. Generate Parentheses</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/02/react-bind-this/">react-bind-this</a>
           </li>
         
       </ul>
