@@ -61,6 +61,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-leet34" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/10/leet34/" class="article-date">
+  <time datetime="2018-10-11T06:04:33.000Z" itemprop="datePublished">2018-10-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/10/leet34/">leet34</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/" target="_blank" rel="noopener">https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/</a></p>
+<h3 id="Category"><a href="#Category" class="headerlink" title="Category"></a>Category</h3><p>Binary search</p>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><p>Find the target, then the first one and the last one.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">while (l + 1 &lt; r) &#123;</span><br><span class="line">    m = l + (r - l) / 2</span><br><span class="line">    if (&lt;)</span><br><span class="line">        l = m</span><br><span class="line">    elif (&gt;)</span><br><span class="line">        r = m</span><br><span class="line">    else</span><br><span class="line">        either or return</span><br><span class="line">&#125;</span><br><span class="line">check l and r</span><br></pre></td></tr></table></figure></p>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] searchRange(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span>[] result = &#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> r = nums.length - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[m] == target) &#123;</span><br><span class="line">                <span class="keyword">int</span>[] result = &#123;findFirst(nums, l, m, target), findLast(nums, m, r, target)&#125;;</span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[m] &lt; target) &#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] result = &#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findFirst</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">            <span class="keyword">return</span> l;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[m] == target &amp;&amp; (m == <span class="number">0</span> || nums[m-<span class="number">1</span>] != target)) &#123;</span><br><span class="line">                <span class="keyword">return</span> m;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[m] &lt; target) &#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findLast</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">            <span class="keyword">return</span> l;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[m] == target &amp;&amp; (m == nums.length - <span class="number">1</span> || nums[m+<span class="number">1</span>] != target)) &#123;</span><br><span class="line">                <span class="keyword">return</span> m;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[m] &lt;= target) &#123;</span><br><span class="line">                l = m + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                r = m - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Best-solution"><a href="#Best-solution" class="headerlink" title="Best solution"></a>Best solution</h3><p><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14701/A-very-simple-Java-solution-with-only-one-binary-search-algorithm" target="_blank" rel="noopener">https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14701/A-very-simple-Java-solution-with-only-one-binary-search-algorithm</a></p>
+<h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>O(Log(N))</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yewang.host/2018/10/10/leet34/" data-id="cjn46p6so000a8l8x9l0400le" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-leet39" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/09/leet39/" class="article-date">
@@ -93,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/10/09/leet39/" data-id="cjn1yvre0000cl68x7ddfjuf9" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/10/09/leet39/" data-id="cjn46p6tr000i8l8x50pnrzjf" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -145,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/10/08/leet33/" data-id="cjn1yvre4000el68xt6bzqhvz" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/10/08/leet33/" data-id="cjn46p6t1000f8l8x9idqazbu" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -193,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/10/08/leet31/" data-id="cjn1yvrdw0009l68xzw8d4f8y" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/10/08/leet31/" data-id="cjn46p6sw000d8l8xw3pf62y0" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -237,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/10/07/leet24/" data-id="cjn1yvrds0008l68x25sb54rf" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/10/07/leet24/" data-id="cjn46p6s600088l8xylb879vr" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -280,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/10/07/leet11/" data-id="cjn1yvrdp0005l68xyh34q397" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/10/07/leet11/" data-id="cjn46p6rw00058l8xi4x64rnd" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -334,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/10/07/22-generate-parentheses/" data-id="cjn1yvrd10001l68xdfsjkthd" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/10/07/22-generate-parentheses/" data-id="cjn46p6pc00008l8x8xc8539w" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -380,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/09/02/react-bind-this/" data-id="cjn1yvren000ol68xy9rilbg1" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/09/02/react-bind-this/" data-id="cjn46p6uu000o8l8x1959cvfo" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -424,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/08/28/nginx-proxy-pass/" data-id="cjn1yvrea000hl68x5sficl7z" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/08/28/nginx-proxy-pass/" data-id="cjn46p6u0000k8l8xnz8jlt9a" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
@@ -468,51 +512,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/08/27/python-import/" data-id="cjn1yvrej000ml68xxmwh3x7q" class="article-share-link">Teilen</a>
+      <a data-url="https://yewang.host/2018/08/27/python-import/" data-id="cjn46p6uo000m8l8xmfuuaiqc" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-perfect" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/13/perfect/" class="article-date">
-  <time datetime="2018-08-13T07:14:53.000Z" itemprop="datePublished">2018-08-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/13/perfect/">perfect</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Ed-Sheeran-Perfect"><a href="#Ed-Sheeran-Perfect" class="headerlink" title="Ed Sheeran -  Perfect"></a>Ed Sheeran -  Perfect</h3><iframe width="560" height="315" src="https://www.youtube.com/embed/2Vv-BfVoq4g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-<p>I found a love for me<br>Darling just dive right in<br>And follow my lead<br>Well I found a girl beautiful and sweet<br>I never knew you were the someone waiting for me<br>Cause we were just kids when we fell in love<br>Not knowing what it was<br>I will not give you up this time<br>But darling, just kiss me slow, your heart is all I own<br>And in your eyes you’re holding mine<br>Baby, I’m dancing in the dark with you between my arms<br>Barefoot on the grass, listening to our favorite song<br>When you said you looked a mess, I whispered underneath my breath<br>But you heard it, darling, you look perfect tonight<br><strong>Well I found a woman, stronger than anyone I know</strong><br><strong>She shares my dreams, I hope that someday I’ll share her home</strong><br><strong>I found a love, to carry more than just my secrets</strong><br><strong>To carry love, to carry children of our own</strong><br>We are still kids, but we’re so in love<br>Fighting against all odds<br>I know we’ll be alright this time<br>Darling, just hold my hand<br>Be my girl, I’ll be your man<br>I see my future in your eyes<br>Baby, I’m dancing in the dark, with you between my arms<br>Barefoot on the grass, listening to our favorite song<br>When I saw you in that dress, looking so beautiful<br>I don’t deserve this, darling, you look perfect tonight<br>Baby, I’m dancing in the dark, with you between my arms<br>Barefoot on the grass, listening to our favorite song<br><strong>I have faith in what I see</strong><br>Now I know I have met an angel in person<br>And she looks perfect<br>I don’t deserve this<br>You look perfect tonight</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yewang.host/2018/08/13/perfect/" data-id="cjn1yvref000jl68xesctqr2m" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Music/">Music</a></li></ul>
 
     </footer>
   </div>
@@ -571,6 +574,10 @@
       <ul>
         
           <li>
+            <a href="/2018/10/10/leet34/">leet34</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/09/leet39/">39. Combination Sum</a>
           </li>
         
@@ -584,10 +591,6 @@
         
           <li>
             <a href="/2018/10/07/leet24/">24. Swap Nodes in Pairst24</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/07/leet11/">11. Container With Most Water</a>
           </li>
         
       </ul>
