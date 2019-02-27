@@ -7,17 +7,17 @@
   
   <title>31. Next Permutation | Dare to differ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description https://leetcode.com/problems/next-permutation/description/ Category Array Explain  find first number which is smaller than it&apos;s after number if the number exist,which means that the nums">
+  <meta name="description" content="Descriptionhttps://leetcode.com/problems/next-permutation/description/ CategoryArray Explain find first number which is smaller than it’s after number if the number exist,which means that the nums not">
 <meta name="keywords" content="Coding Practice">
 <meta property="og:type" content="article">
 <meta property="og:title" content="31. Next Permutation">
-<meta property="og:url" content="http://blog.yeswang.me/2018/10/08/leet31/index.html">
+<meta property="og:url" content="http://yeswang.me/2018/10/08/leet31/index.html">
 <meta property="og:site_name" content="Dare to differ">
-<meta property="og:description" content="Description https://leetcode.com/problems/next-permutation/description/ Category Array Explain  find first number which is smaller than it&apos;s after number if the number exist,which means that the nums">
+<meta property="og:description" content="Descriptionhttps://leetcode.com/problems/next-permutation/description/ CategoryArray Explain find first number which is smaller than it’s after number if the number exist,which means that the nums not">
 <meta property="og:updated_time" content="2018-10-09T06:44:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="31. Next Permutation">
-<meta name="twitter:description" content="Description https://leetcode.com/problems/next-permutation/description/ Category Array Explain  find first number which is smaller than it&apos;s after number if the number exist,which means that the nums">
+<meta name="twitter:description" content="Descriptionhttps://leetcode.com/problems/next-permutation/description/ CategoryArray Explain find first number which is smaller than it’s after number if the number exist,which means that the nums not">
   
     <link rel="alternate" href="/atom.xml" title="Dare to differ" type="application/atom+xml">
   
@@ -53,12 +53,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.yeswang.me"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yeswang.me"></form>
       </div>
     </div>
   </div>
@@ -86,28 +86,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3>Description</h3>
-<p>https://leetcode.com/problems/next-permutation/description/</p>
-<h3>Category</h3>
-<p>Array</p>
-<h3>Explain</h3>
-<ol>
-<li>find first number which is smaller than it's after number</li>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><a href="https://leetcode.com/problems/next-permutation/description/" target="_blank" rel="noopener">https://leetcode.com/problems/next-permutation/description/</a></p>
+<h3 id="Category"><a href="#Category" class="headerlink" title="Category"></a>Category</h3><p>Array</p>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><ol>
+<li>find first number which is smaller than it’s after number</li>
 <li>if the number exist,which means that the nums not like{5,4,3,2,1}, <strong>swap</strong> the number with the first larger one from backward in the after numbers</li>
-<li><strong>revert</strong> the sub array for after numbers
-Challenge: handle corner cases, {5,4,3,2,1}: no swap and {1,2}: no revert</li>
+<li><strong>revert</strong> the sub array for after numbers<br>Challenge: handle corner cases, {5,4,3,2,1}: no swap and {1,2}: no revert</li>
 </ol>
-<h3>My solution</h3>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. find the first num that is smaller than the after number</span></span><br><span class="line">        <span class="keyword">int</span> l = nums.length;</span><br><span class="line">        <span class="keyword">int</span> i = l - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (;i &gt; <span class="number">0</span>;i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] &gt; nums[i-<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// &#123;5,4,3,2,1&#125;</span></span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">            revert(nums, <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> j = l - <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// swap nums[i-1] and next larger number from backward</span></span><br><span class="line">        <span class="keyword">for</span> (;j &gt;= i;j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[i-<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(nums, i-<span class="number">1</span>, j);</span><br><span class="line">        revert(nums, i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = nums[i];</span><br><span class="line">        nums[i] = nums[j];</span><br><span class="line">        nums[j] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">revert</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = start; </span><br><span class="line">        <span class="keyword">int</span> j = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">            swap(nums, i++, j--);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>Best solution</h3>
-<p>https://leetcode.com/problems/next-permutation/discuss/13865/Sharing-my-clean-and-easy-understand-java-code-with-explanation</p>
-<h3>Time complexity</h3>
-<p>O(N)</p>
+<h3 id="My-solution"><a href="#My-solution" class="headerlink" title="My solution"></a>My solution</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. find the first num that is smaller than the after number</span></span><br><span class="line">        <span class="keyword">int</span> l = nums.length;</span><br><span class="line">        <span class="keyword">int</span> i = l - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (;i &gt; <span class="number">0</span>;i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] &gt; nums[i-<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// &#123;5,4,3,2,1&#125;</span></span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">            revert(nums, <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> j = l - <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// swap nums[i-1] and next larger number from backward</span></span><br><span class="line">        <span class="keyword">for</span> (;j &gt;= i;j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[i-<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(nums, i-<span class="number">1</span>, j);</span><br><span class="line">        revert(nums, i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = nums[i];</span><br><span class="line">        nums[i] = nums[j];</span><br><span class="line">        nums[j] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">revert</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = start; </span><br><span class="line">        <span class="keyword">int</span> j = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j) &#123;</span><br><span class="line">            swap(nums, i++, j--);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Best-solution"><a href="#Best-solution" class="headerlink" title="Best solution"></a>Best solution</h3><p><a href="https://leetcode.com/problems/next-permutation/discuss/13865/Sharing-my-clean-and-easy-understand-java-code-with-explanation" target="_blank" rel="noopener">https://leetcode.com/problems/next-permutation/discuss/13865/Sharing-my-clean-and-easy-understand-java-code-with-explanation</a></p>
+<h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>O(N)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.yeswang.me/2018/10/08/leet31/" data-id="cjsmty02l000ewj8xyf6xkyju" class="article-share-link">Compartir</a>
+      <a data-url="http://yeswang.me/2018/10/08/leet31/" data-id="cjsmu8ubm000dyb8xwegkoihl" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -119,7 +112,7 @@ Challenge: handle corner cases, {5,4,3,2,1}: no swap and {1,2}: no revert</li>
 <nav id="article-nav">
   
     <a href="/2018/10/08/leet33/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nuevo</strong>
+      <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
           33. Search in Rotated Sorted Array
@@ -129,7 +122,7 @@ Challenge: handle corner cases, {5,4,3,2,1}: no swap and {1,2}: no revert</li>
   
   
     <a href="/2018/10/07/leet24/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Viejo</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">24. Swap Nodes in Pairst24</div>
     </a>
   
@@ -157,7 +150,7 @@ Challenge: handle corner cases, {5,4,3,2,1}: no swap and {1,2}: no revert</li>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Coding-Practice/" style="font-size: 20px;">Coding Practice</a> <a href="/tags/Design-Pattern/" style="font-size: 13.33px;">Design Pattern</a> <a href="/tags/Music/" style="font-size: 16.67px;">Music</a> <a href="/tags/Poem/" style="font-size: 10px;">Poem</a> <a href="/tags/Think/" style="font-size: 10px;">Think</a> <a href="/tags/Work/" style="font-size: 20px;">Work</a>
     </div>
@@ -166,7 +159,7 @@ Challenge: handle corner cases, {5,4,3,2,1}: no swap and {1,2}: no revert</li>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -176,7 +169,7 @@ Challenge: handle corner cases, {5,4,3,2,1}: no swap and {1,2}: no revert</li>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
@@ -213,7 +206,7 @@ Challenge: handle corner cases, {5,4,3,2,1}: no swap and {1,2}: no revert</li>
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2019 Ye Wang<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

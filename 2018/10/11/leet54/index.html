@@ -7,17 +7,17 @@
   
   <title>54. Spiral Matrix | Dare to differ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description https://leetcode.com/problems/spiral-matrix/description/ Category Array Explain  Split the spiral into 4 part, each part could be [n-1, n-1, n-1, n-1] or [n, n-2, n, n-2] Special condition">
+  <meta name="description" content="Descriptionhttps://leetcode.com/problems/spiral-matrix/description/ CategoryArray Explain Split the spiral into 4 part, each part could be [n-1, n-1, n-1, n-1] or [n, n-2, n, n-2] Special condition, i">
 <meta name="keywords" content="Coding Practice">
 <meta property="og:type" content="article">
 <meta property="og:title" content="54. Spiral Matrix">
-<meta property="og:url" content="http://blog.yeswang.me/2018/10/11/leet54/index.html">
+<meta property="og:url" content="http://yeswang.me/2018/10/11/leet54/index.html">
 <meta property="og:site_name" content="Dare to differ">
-<meta property="og:description" content="Description https://leetcode.com/problems/spiral-matrix/description/ Category Array Explain  Split the spiral into 4 part, each part could be [n-1, n-1, n-1, n-1] or [n, n-2, n, n-2] Special condition">
+<meta property="og:description" content="Descriptionhttps://leetcode.com/problems/spiral-matrix/description/ CategoryArray Explain Split the spiral into 4 part, each part could be [n-1, n-1, n-1, n-1] or [n, n-2, n, n-2] Special condition, i">
 <meta property="og:updated_time" content="2018-10-11T07:24:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="54. Spiral Matrix">
-<meta name="twitter:description" content="Description https://leetcode.com/problems/spiral-matrix/description/ Category Array Explain  Split the spiral into 4 part, each part could be [n-1, n-1, n-1, n-1] or [n, n-2, n, n-2] Special condition">
+<meta name="twitter:description" content="Descriptionhttps://leetcode.com/problems/spiral-matrix/description/ CategoryArray Explain Split the spiral into 4 part, each part could be [n-1, n-1, n-1, n-1] or [n, n-2, n, n-2] Special condition, i">
   
     <link rel="alternate" href="/atom.xml" title="Dare to differ" type="application/atom+xml">
   
@@ -53,12 +53,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.yeswang.me"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yeswang.me"></form>
       </div>
     </div>
   </div>
@@ -86,26 +86,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3>Description</h3>
-<p>https://leetcode.com/problems/spiral-matrix/description/</p>
-<h3>Category</h3>
-<p>Array</p>
-<h3>Explain</h3>
-<ol>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><a href="https://leetcode.com/problems/spiral-matrix/description/" target="_blank" rel="noopener">https://leetcode.com/problems/spiral-matrix/description/</a></p>
+<h3 id="Category"><a href="#Category" class="headerlink" title="Category"></a>Category</h3><p>Array</p>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><ol>
 <li>Split the spiral into 4 part, each part could be [n-1, n-1, n-1, n-1] or [n, n-2, n, n-2]</li>
 <li>Special condition, if number of layers, min(x, y),  is odd, the last loop should be done 1 round instead of 4.</li>
 </ol>
-<h3>My Solution</h3>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">spiralOrder</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> x = matrix.length;</span><br><span class="line">        <span class="keyword">if</span> (x==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> y = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span> round = Math.min(x, y);</span><br><span class="line">        <span class="comment">// if (round == 1) &#123;</span></span><br><span class="line">       </span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (cur &lt; round/<span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> i = cur, j = cur;</span><br><span class="line">            <span class="keyword">for</span> (;j &lt; y - cur - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                result.add(matrix[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (;i &lt; x - cur - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                result.add(matrix[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (;j &gt;= <span class="number">1</span> + cur; j--) &#123;</span><br><span class="line">                result.add(matrix[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(;i &gt;= <span class="number">1</span> + cur; i--) &#123;</span><br><span class="line">                result.add(matrix[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">            cur++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (round % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (round == x) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = cur; i &lt; y - cur; i ++) </span><br><span class="line">                    result.add(matrix[cur][i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = cur; i &lt; x - cur; i ++) </span><br><span class="line">                    result.add(matrix[i][cur]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>Best solution</h3>
-<p>https://leetcode.com/problems/spiral-matrix/discuss/20599/Super-Simple-and-Easy-to-Understand-Solution</p>
-<h3>Time complexity</h3>
-<p>O(N*N)</p>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">spiralOrder</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> x = matrix.length;</span><br><span class="line">        <span class="keyword">if</span> (x==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> y = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span> round = Math.min(x, y);</span><br><span class="line">        <span class="comment">// if (round == 1) &#123;</span></span><br><span class="line">       </span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (cur &lt; round/<span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> i = cur, j = cur;</span><br><span class="line">            <span class="keyword">for</span> (;j &lt; y - cur - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                result.add(matrix[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (;i &lt; x - cur - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                result.add(matrix[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (;j &gt;= <span class="number">1</span> + cur; j--) &#123;</span><br><span class="line">                result.add(matrix[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(;i &gt;= <span class="number">1</span> + cur; i--) &#123;</span><br><span class="line">                result.add(matrix[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">            cur++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (round % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (round == x) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = cur; i &lt; y - cur; i ++) </span><br><span class="line">                    result.add(matrix[cur][i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = cur; i &lt; x - cur; i ++) </span><br><span class="line">                    result.add(matrix[i][cur]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Best-solution"><a href="#Best-solution" class="headerlink" title="Best solution"></a>Best solution</h3><p><a href="https://leetcode.com/problems/spiral-matrix/discuss/20599/Super-Simple-and-Easy-to-Understand-Solution" target="_blank" rel="noopener">https://leetcode.com/problems/spiral-matrix/discuss/20599/Super-Simple-and-Easy-to-Understand-Solution</a></p>
+<h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>O(N*N)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.yeswang.me/2018/10/11/leet54/" data-id="cjsmty030000owj8x9ig708sz" class="article-share-link">Compartir</a>
+      <a data-url="http://yeswang.me/2018/10/11/leet54/" data-id="cjsmu8uc1000nyb8xn2f4x089" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -117,7 +111,7 @@
 <nav id="article-nav">
   
     <a href="/2018/11/07/design-pattern-factory/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nuevo</strong>
+      <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
           Design Pattern - Simple Factory
@@ -127,7 +121,7 @@
   
   
     <a href="/2018/10/10/leet34/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Viejo</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">34. Find First and Last Position of Element in Sorted Array</div>
     </a>
   
@@ -155,7 +149,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Coding-Practice/" style="font-size: 20px;">Coding Practice</a> <a href="/tags/Design-Pattern/" style="font-size: 13.33px;">Design Pattern</a> <a href="/tags/Music/" style="font-size: 16.67px;">Music</a> <a href="/tags/Poem/" style="font-size: 10px;">Poem</a> <a href="/tags/Think/" style="font-size: 10px;">Think</a> <a href="/tags/Work/" style="font-size: 20px;">Work</a>
     </div>
@@ -164,7 +158,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -174,7 +168,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
@@ -211,7 +205,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2019 Ye Wang<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

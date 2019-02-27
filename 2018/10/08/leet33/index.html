@@ -7,17 +7,17 @@
   
   <title>33. Search in Rotated Sorted Array | Dare to differ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description https://leetcode.com/problems/search-in-rotated-sorted-array/description/ Category Array, Binary search Explain Solution 1  find the num of numbers rotated to the front binary search consi">
+  <meta name="description" content="Descriptionhttps://leetcode.com/problems/search-in-rotated-sorted-array/description/ CategoryArray, Binary search ExplainSolution 1  find the num of numbers rotated to the front  binary search conside">
 <meta name="keywords" content="Coding Practice">
 <meta property="og:type" content="article">
 <meta property="og:title" content="33. Search in Rotated Sorted Array">
-<meta property="og:url" content="http://blog.yeswang.me/2018/10/08/leet33/index.html">
+<meta property="og:url" content="http://yeswang.me/2018/10/08/leet33/index.html">
 <meta property="og:site_name" content="Dare to differ">
-<meta property="og:description" content="Description https://leetcode.com/problems/search-in-rotated-sorted-array/description/ Category Array, Binary search Explain Solution 1  find the num of numbers rotated to the front binary search consi">
+<meta property="og:description" content="Descriptionhttps://leetcode.com/problems/search-in-rotated-sorted-array/description/ CategoryArray, Binary search ExplainSolution 1  find the num of numbers rotated to the front  binary search conside">
 <meta property="og:updated_time" content="2018-10-09T06:44:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="33. Search in Rotated Sorted Array">
-<meta name="twitter:description" content="Description https://leetcode.com/problems/search-in-rotated-sorted-array/description/ Category Array, Binary search Explain Solution 1  find the num of numbers rotated to the front binary search consi">
+<meta name="twitter:description" content="Descriptionhttps://leetcode.com/problems/search-in-rotated-sorted-array/description/ CategoryArray, Binary search ExplainSolution 1  find the num of numbers rotated to the front  binary search conside">
   
     <link rel="alternate" href="/atom.xml" title="Dare to differ" type="application/atom+xml">
   
@@ -53,12 +53,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.yeswang.me"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yeswang.me"></form>
       </div>
     </div>
   </div>
@@ -86,14 +86,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3>Description</h3>
-<p>https://leetcode.com/problems/search-in-rotated-sorted-array/description/</p>
-<h3>Category</h3>
-<p>Array, Binary search</p>
-<h3>Explain</h3>
-<p>Solution 1</p>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/description/" target="_blank" rel="noopener">https://leetcode.com/problems/search-in-rotated-sorted-array/description/</a></p>
+<h3 id="Category"><a href="#Category" class="headerlink" title="Category"></a>Category</h3><p>Array, Binary search</p>
+<h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><p>Solution 1</p>
 <ol>
-<li>find the num of numbers rotated to the front</li>
+<li>find the num of numbers rotated to the front </li>
 <li>binary search considering the rotate offset</li>
 </ol>
 <p>Solution 2 (one loop)</p>
@@ -101,16 +98,13 @@
 <li>there are 6 conditions considering the relative position of A[0], A[mid] and target</li>
 <li>based on each case, the left or right bound should be updated.</li>
 </ol>
-<h3>My Solution</h3>
-<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> r = length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> rotate = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[l] &gt; nums[r]) &#123;</span><br><span class="line">            <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">                <span class="keyword">int</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span> (nums[m] &gt;= nums[<span class="number">0</span>]) &#123;</span><br><span class="line">                    l = m + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    r = m;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            rotate = r;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(rotate);</span><br><span class="line">        l = <span class="number">0</span>;</span><br><span class="line">        r = length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = ((l + r)/<span class="number">2</span>  + rotate) % length;</span><br><span class="line">            System.out.println(m + <span class="string">" : "</span> + nums[m]);</span><br><span class="line">            <span class="keyword">if</span> (nums[m] == target) &#123;</span><br><span class="line">                <span class="keyword">return</span> m;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[m] &gt; target) &#123;</span><br><span class="line">                r = (l + r)/<span class="number">2</span> - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                l = (l + r)/<span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>Best solution</h3>
-<p>https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14472/Java-AC-Solution-using-once-binary-search</p>
-<h3>Time complexity</h3>
-
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> r = length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> rotate = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[l] &gt; nums[r]) &#123;</span><br><span class="line">            <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">                <span class="keyword">int</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span> (nums[m] &gt;= nums[<span class="number">0</span>]) &#123;</span><br><span class="line">                    l = m + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    r = m;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            rotate = r;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(rotate);</span><br><span class="line">        l = <span class="number">0</span>;</span><br><span class="line">        r = length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = ((l + r)/<span class="number">2</span>  + rotate) % length;</span><br><span class="line">            System.out.println(m + <span class="string">" : "</span> + nums[m]);</span><br><span class="line">            <span class="keyword">if</span> (nums[m] == target) &#123;</span><br><span class="line">                <span class="keyword">return</span> m;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[m] &gt; target) &#123;</span><br><span class="line">                r = (l + r)/<span class="number">2</span> - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                l = (l + r)/<span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Best-solution"><a href="#Best-solution" class="headerlink" title="Best solution"></a>Best solution</h3><p><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14472/Java-AC-Solution-using-once-binary-search" target="_blank" rel="noopener">https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14472/Java-AC-Solution-using-once-binary-search</a></p>
+<h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.yeswang.me/2018/10/08/leet33/" data-id="cjsmty02r000hwj8xd5660xjq" class="article-share-link">Compartir</a>
+      <a data-url="http://yeswang.me/2018/10/08/leet33/" data-id="cjsmu8ubr000gyb8xipzuhwrn" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding-Practice/">Coding Practice</a></li></ul>
@@ -122,7 +116,7 @@
 <nav id="article-nav">
   
     <a href="/2018/10/09/leet39/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nuevo</strong>
+      <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
           39. Combination Sum
@@ -132,7 +126,7 @@
   
   
     <a href="/2018/10/08/leet31/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Viejo</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">31. Next Permutation</div>
     </a>
   
@@ -160,7 +154,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Coding-Practice/" style="font-size: 20px;">Coding Practice</a> <a href="/tags/Design-Pattern/" style="font-size: 13.33px;">Design Pattern</a> <a href="/tags/Music/" style="font-size: 16.67px;">Music</a> <a href="/tags/Poem/" style="font-size: 10px;">Poem</a> <a href="/tags/Think/" style="font-size: 10px;">Think</a> <a href="/tags/Work/" style="font-size: 20px;">Work</a>
     </div>
@@ -169,7 +163,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -179,7 +173,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
@@ -216,7 +210,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2019 Ye Wang<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
