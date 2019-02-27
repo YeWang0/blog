@@ -11,7 +11,7 @@
 <meta name="keywords" content="Work">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-bind-this">
-<meta property="og:url" content="http://yeswang.me/2018/09/02/react-bind-this/index.html">
+<meta property="og:url" content="http://blog.yeswang.me/2018/09/02/react-bind-this/index.html">
 <meta property="og:site_name" content="Dare to differ">
 <meta property="og:description" content="如果你使用了严格模式，那么没有显式的使用调用者 的情况下， this 永远不会自动绑定到全局对象上。如果此时你调用 greetCopy ，你就会得到报错，因为这时候 this不指向任何对象，this 这时候就是 undefined 如果我想使用另一个对象作为调用者来调用 fish.greet ，我该怎么做？这时候就要用到 Function.prototype.call 。 在调用的时候并没有显式的">
 <meta property="og:updated_time" content="2018-09-02T18:33:24.000Z">
@@ -58,7 +58,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yeswang.me"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.yeswang.me"></form>
       </div>
     </div>
   </div>
@@ -92,13 +92,14 @@
 <p>如果你使用了 ES6 的 class 语法，所有在 class 中声明的方法都会自动地使用严格模式</p>
 <p>当你使用 onClick={this.handleClick}来绑定事件监听函数的时候，handleClick 函数实际上会作为回调函数，传入 addEventListener() 。这就是为什么你在 React 的组件中添加事件处理函数为什么会得到 undefnied 而不是全局对象或者别的什么东西。</p>
 <p>箭头函数 <code>this</code> 永远绑定了定义箭头函数所在的那个对象</p>
-<p>this指向全局变量的情况一般是：<br>‘This’ inside a function which is inside another function will be attached to the global object.</p>
-<p>Ref: <a href="https://zhuanlan.zhihu.com/p/37911534" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/37911534</a></p>
+<p>this指向全局变量的情况一般是：
+‘This’ inside a function which is inside another function will be attached to the global object.</p>
+<p>Ref: https://zhuanlan.zhihu.com/p/37911534</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yeswang.me/2018/09/02/react-bind-this/" data-id="cjsmtwo85000xvn8x4dv6elbb" class="article-share-link">Compartir</a>
+      <a data-url="http://blog.yeswang.me/2018/09/02/react-bind-this/" data-id="cjsmty03e000ywj8xa8x1zu7p" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>

@@ -7,17 +7,17 @@
   
   <title>Qury工作总结-(半年) | Dare to differ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Qury work summary Optimized existed PhantomJS based online rendering system Previous performace: %50 60s =》 %70 10s, %90 20s, 10% 60s Communication mechanism Task Queue: enable cancelling tasks  Rende">
+  <meta name="description" content="Qury work summary   Optimized existed PhantomJS based online rendering system  Previous performace: %50 &amp;lt;60s %50 &amp;gt;60s =》 %70 10s, %90 20s, 10% 60s Communication mechanism Task Queue: enable canc">
 <meta name="keywords" content="Work">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Qury工作总结-(半年)">
-<meta property="og:url" content="http://yeswang.me/2018/05/14/work-summary-5-14/index.html">
+<meta property="og:url" content="http://blog.yeswang.me/2018/05/14/work-summary-5-14/index.html">
 <meta property="og:site_name" content="Dare to differ">
-<meta property="og:description" content="Qury work summary Optimized existed PhantomJS based online rendering system Previous performace: %50 60s =》 %70 10s, %90 20s, 10% 60s Communication mechanism Task Queue: enable cancelling tasks  Rende">
+<meta property="og:description" content="Qury work summary   Optimized existed PhantomJS based online rendering system  Previous performace: %50 &amp;lt;60s %50 &amp;gt;60s =》 %70 10s, %90 20s, 10% 60s Communication mechanism Task Queue: enable canc">
 <meta property="og:updated_time" content="2018-08-29T02:44:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Qury工作总结-(半年)">
-<meta name="twitter:description" content="Qury work summary Optimized existed PhantomJS based online rendering system Previous performace: %50 60s =》 %70 10s, %90 20s, 10% 60s Communication mechanism Task Queue: enable cancelling tasks  Rende">
+<meta name="twitter:description" content="Qury work summary   Optimized existed PhantomJS based online rendering system  Previous performace: %50 &amp;lt;60s %50 &amp;gt;60s =》 %70 10s, %90 20s, 10% 60s Communication mechanism Task Queue: enable canc">
   
     <link rel="alternate" href="/atom.xml" title="Dare to differ" type="application/atom+xml">
   
@@ -58,7 +58,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yeswang.me"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.yeswang.me"></form>
       </div>
     </div>
   </div>
@@ -86,37 +86,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Qury-work-summary"><a href="#Qury-work-summary" class="headerlink" title="Qury work summary"></a>Qury work summary</h2><ol>
-<li>Optimized existed PhantomJS based online rendering system<ul>
-<li>Previous performace: %50 <60s %50="">60s =》 %70 10s, %90 20s, 10% 60s</60s></li>
+        <h2>Qury work summary</h2>
+<ol>
+<li>
+<p>Optimized existed PhantomJS based online rendering system</p>
+<ul>
+<li>Previous performace: %50 &lt;60s %50 &gt;60s =》 %70 10s, %90 20s, 10% 60s</li>
 <li>Communication mechanism</li>
-<li>Task Queue: enable cancelling tasks </li>
+<li>Task Queue: enable cancelling tasks</li>
 <li>Rendering logic: split the previous logic to multiple steps and add corner case handling for each steps to improve the result quality(i.e. Blank white page, timeout)</li>
 <li>Embedded no-result page detection and quality improvement feature.</li>
 </ul>
 </li>
-<li>Maintained and rewrite the result rendering code (Android)<ul>
+<li>
+<p>Maintained and rewrite the result rendering code (Android)</p>
+<ul>
 <li>Figure out the UI drawing logic: Y = padding * (2^(i - scroll/height) - 1)</li>
 <li>Cutomized adapter to control the UI</li>
 <li>Cutomized webview to make the rendering logic at client side complete</li>
 </ul>
 </li>
-<li>Desigined and developed a new real-time rendering system based on Selenium <ul>
+<li>
+<p>Desigined and developed a new real-time rendering system based on Selenium</p>
+<ul>
 <li>Improve the performance of rendering (70% 5s, 95% 10s, 5% 60s)</li>
 <li>Desigined rule based quality improvement method to improve the snapshot quality (no popup, no header, no ads, show content only)</li>
 <li>Desigined IR, ML and Rule based model to detect no-result page (90% precision and 99% recall)</li>
 </ul>
 </li>
-<li><p>Data crawling task of Instagram</p>
+<li>
+<p>Data crawling task of Instagram</p>
 <ul>
-<li>get trending hashtags and posts recursively </li>
+<li>get trending hashtags and posts recursively</li>
 <li>crawl trending posts and get all hashtags of these trending posts</li>
 <li>recursively using these newly crawled hashtags to get more related ones.</li>
 </ul>
 </li>
-<li><p>Automation system to add new websites and apps for search and browsing.</p>
+<li>
+<p>Automation system to add new websites and apps for search and browsing.</p>
 </li>
-<li><p>A web-based online file and configuration distribution system (config-hub). </p>
+<li>
+<p>A web-based online file and configuration distribution system (config-hub).</p>
 <ul>
 <li>Config ssh connection of servers within a cluster and use one of them to host website, enable various of operations within the cluster based on SSH.</li>
 <li>Executing ssh commands or files.</li>
@@ -130,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yeswang.me/2018/05/14/work-summary-5-14/" data-id="cjsmtwo8e0014vn8x5wughbmy" class="article-share-link">Compartir</a>
+      <a data-url="http://blog.yeswang.me/2018/05/14/work-summary-5-14/" data-id="cjsmty03q0018wj8xgx6zqkmn" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Work/">Work</a></li></ul>
